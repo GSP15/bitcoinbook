@@ -759,11 +759,11 @@ sys	0m0.035s
 
 ===== Vanity address security
 
-((("security", "vanity addresses")))Vanity addresses can be used to enhance _and_ to defeat security measures; they are truly a double-edged sword. Used to improve security, a distinctive address makes it harder for adversaries to substitute their own address and fool your customers into paying them instead of you. Unfortunately, vanity addresses also make it possible for anyone to create an address that _resembles_ any random address, or even another vanity address, thereby fooling your customers. 
+((("security", "vanity addresses")))Vanity 地址可以用于增强 _和_ 或削弱安全措施；它们的确是一把双刃剑。用于增强安全性，一个辨识度高的地址使得坏人更难使用他们自己的地址来替代你的，以欺骗你的客户向他们付款而不是你。不幸的是，vanity 地址也使得任何人都可以创建 _酷似_ 任何随机地址的地址，甚至是另一个 vanity 地址，以此来欺骗你的客户。
 
-Eugenia could advertise a randomly generated address (e.g., +1J7mdg5rbQyUHENYdx39WVWK7fsLpEoXZy+) to which people can send their donations. Or, she could generate a vanity address that starts with 1Kids, to make it more distinctive. 
+Eugenia 可以向给她发送捐款的人宣传一个随机生成的地址（例如 +1J7mdg5rbQyUHENYdx39WVWK7fsLpEoXZy+）。或者，她可以生成一个 以 1Kids 开头的 vanity 地址，来使它辨识度更高。
 
-In both cases, one of the risks of using a single fixed address (rather than a separate dynamic address per donor) is that a thief might be able to infiltrate your website and replace it with his own address, thereby diverting donations to himself. If you have advertised your donation address in a number of different places, your users may visually inspect the address before making a payment to ensure it is the same one they saw on your website, on your email, and on your flyer. In the case of a random address like +1J7mdg5rbQyUHENYdx39WVWK7fsLpEoXZy+, the average user will perhaps inspect the first few characters "1J7mdg" and be satisfied that the address matches. Using a vanity address generator, someone with the intent to steal by substituting a similar-looking address can quickly generate addresses that match the first few characters, as shown in <<table_4-13>>.
+无论哪种情况，使用一个固定地址（而不是每个捐赠人一个分开的动态地址）的风险之一是，窃贼能够潜入你的网站并使用他自己的地址替换你的，因而将捐款转移给他自己。如果你已经在几个不同的地方公开了你的捐赠地址，你的用户可能会在进行支付之前，视觉检查这个地址以确认它与他们在你的网站、email、传单上看到的一样。在像 +1J7mdg5rbQyUHENYdx39WVWK7fsLpEoXZy+ 这样的随机地址的情况下，大多数用户也许会检查头几个字符 “1J7mdg” 并认为它们吻合就够了。使用 vanity 地址生成器，某些有意想要使用一个看起来相似的地址来偷梁换柱的人，可以快速地生成头几个字符吻合的地址，就如<<table_4-13>>中展示的。
 
 [[table_4-13]]
 .Generating vanity addresses to match a random address
@@ -774,14 +774,14 @@ In both cases, one of the risks of using a single fixed address (rather than a s
 | *Vanity (6-character match)* | 1J7mdg5WxGENmwyJP9xuGhG5KRzu99BBCX
 |=======
 
-So does a vanity address increase security? If Eugenia generates the vanity address +1Kids33q44erFfpeXrmDSz7zEqG2FesZEN+, users are likely to look at the vanity pattern word _and a few characters beyond_, for example noticing the "1Kids33" part of the address. That would force an attacker to generate a vanity address matching at least six characters (two more), expending an effort that is 3,364 times (58 &#x00D7; 58) higher than the effort Eugenia expended for her 4-character vanity. Essentially, the effort Eugenia expends (or pays a vanity pool for) "pushes" the attacker into having to produce a longer pattern vanity. If Eugenia pays a pool to generate an 8-character vanity address, the attacker would be pushed into the realm of 10 characters, which is infeasible on a personal computer and expensive even with a custom vanity-mining rig or vanity pool. What is affordable for Eugenia becomes unaffordable for the attacker, especially if the potential reward of fraud is not high enough to cover the cost of the vanity address generation.((("", startref="Avanity04")))((("", startref="vanity04")))((("", startref="eugeniafour"))) 
+那么 vanity 地址增强了安全性吗？如果 Eugenia 生成了 vanity 地址 +1Kids33q44erFfpeXrmDSz7zEqG2FesZEN+，用户很可能会观察 Vanity 范例单词 _以及之后的几个字符_，例如关注地址的 “1Kids33” 部分。这会迫使攻击者生成吻合最少六个（多两个）字符的 vanity 地址，其难度要比 Eugenia 生成她的四字符 vanity 大 3364 倍（58 &#x00D7; 58）。实质上，Eugenia 花费的努力越多（或者向一个 vanity 矿池付的钱越多），她就迫使攻击者不得不生成更长的 vanity 范例。如果 Eugenia 向矿池付钱生成了一个八个字符的 vanity 地址，那么攻击者就将被推到生成十个字符的地步，这在个人电脑上时不可能的，即使是对自建的 vanity 矿场和矿池来说也是昂贵的。Eugenia 负担得起的东西变成了攻击者负担不起的东西，特别是当欺诈的回报不能填补生成 vanity 地址生成的成本时。((("", startref="Avanity04")))((("", startref="vanity04")))((("", startref="eugeniafour"))) 
 
 [[paper_wallets]]
 ==== Paper Wallets
 
-((("keys and addresses", "advanced forms", "paper wallets")))((("paper wallets", id="paperw04")))((("wallets", "types of", "paper wallets", id="Wpaper04")))Paper wallets are bitcoin private keys printed on paper. Often the paper wallet also includes the corresponding bitcoin address for convenience, but this is not necessary because it can be derived from the private key. Paper wallets are a very effective way to create backups or offline bitcoin storage, also known as "cold storage." As a backup mechanism, a paper wallet can provide security against the loss of key due to a computer mishap such as a hard-drive failure, theft, or accidental deletion. As a "cold storage" mechanism, if the paper wallet keys are generated offline and never stored on a computer system, they are much more secure against hackers, keyloggers, and other online computer threats. 
+((("keys and addresses", "advanced forms", "paper wallets")))((("paper wallets", id="paperw04")))((("wallets", "types of", "paper wallets", id="Wpaper04")))纸质钱包是印制在纸上的比特币私钥。通常为了方便，纸质钱包还会包含比特币地址，但是因为它可以从私钥中抽取出来所以不是必须的。纸质钱包是一种创建备份或比特币离线存储（也称为“冷存储”）的高效方法。作为一种备份机制，纸质钱包可以针对诸如硬件损害造成的计算机事故、盗窃、或意外删除等情况提供安全措施。作为一种“冷存储”机制，如果纸质钱包的密钥是离线生成，而且从未保存到一个计算机系统中，那么它们就对黑客、键盘记录器、和其他在线的计算机威胁具有免疫力。
 
-Paper wallets come in many shapes, sizes, and designs, but at a very basic level are just a key and an address printed on paper. <<table_4-14>> shows the simplest form of a paper wallet.
+纸质钱包拥有多种形状、大小、和设计，但是最基本的就是印在纸上的一个密钥和一个地址。<<table_4-14>>展示了最简单的纸质钱包。
 
 [[table_4-14]]
 .Simplest form of a paper wallet—a printout of the bitcoin address and private key
@@ -792,13 +792,13 @@ Paper wallets come in many shapes, sizes, and designs, but at a very basic level
 |=======================
 
 
-Paper wallets can be generated easily using a tool such as the client-side JavaScript generator at _bitaddress.org_. This page contains all the code necessary to generate keys and paper wallets, even while completely disconnected from the internet. To use it, save the HTML page on your local drive or on an external USB flash drive. Disconnect from the internet and open the file in a browser. Even better, boot your computer using a pristine operating system, such as a CD-ROM bootable Linux OS. Any keys generated with this tool while offline can be printed on a local printer over a USB cable (not wirelessly), thereby creating paper wallets whose keys exist only on the paper and have never been stored on any online system. Put these paper wallets in a fireproof safe and "send" bitcoin to their bitcoin address, to implement a simple yet highly effective "cold storage" solution. <<paper_wallet_simple>> shows a paper wallet generated from the bitaddress.org site.
+使用 _bitaddress.org_ 上的客户端 JavaScript 生成器这样的工具，纸质钱包可以很容生成。这个网页含有生成密钥和纸质钱包所需的所有代码，即便是与因特网完全断开的情况下。要使用它，将这个 HTML 网页保存在你的本地磁盘或外部 USB 闪存中。然后断开因特网并使用浏览器打开这个文件。更好的做法是，使用一个纯净的操作系统启动你的电脑，比如可以通过 CD-ROM 启动的 Linux 系统。任何使用这个工具在离线状态下生成的密钥可以通过 USB 数据线（不是无线）在一个本地的打印机上打印出来，如此创建的纸质钱包，它的密钥仅存在于这张纸上而从未存储到任何在线系统。将这些纸质钱包保存在一个防火保险箱中并“发送”比特币到它们的比特币地址，就可以实现一个简单并且高效的“冷存储”方案。<<paper_wallet_simple>>展示了一个在 bitaddress.org 网站生成的纸质钱包。
 
 [[paper_wallet_simple]]
 .An example of a simple paper wallet from bitaddress.org
 image::images/mbc2_0408.png[]
 
-((("bitcoin improvement proposals", "Encrypted Private Keys (BIP-38)")))The disadvantage of a simple paper wallet system is that the printed keys are vulnerable to theft. A thief who is able to gain access to the paper can either steal it or photograph the keys and take control of the bitcoin locked with those keys. A more sophisticated paper wallet storage system uses BIP-38 encrypted private keys. The keys printed on the paper wallet are protected by a passphrase that the owner has memorized. Without the passphrase, the encrypted keys are useless. Yet, they still are superior to a passphrase-protected wallet because the keys have never been online and must be physically retrieved from a safe or other physically secured storage. <<paper_wallet_encrypted>> shows a paper wallet with an encrypted private key (BIP-38) created on the bitaddress.org site. 
+((("bitcoin improvement proposals", "Encrypted Private Keys (BIP-38)")))简单的纸质钱包系统的缺点是这些打印出来的密钥容易被盗窃。一个取得这些纸张访问权的窃贼可以偷取它们或者将密钥拍下来，以取得被这些密钥锁定的比特币的控制权。更精巧的纸质钱包存储系统使用 BIP-38 加密的私钥。这些被打印在纸质钱包上的密钥由其所有者记忆中的密码所保护。没有密码，这些加密的密钥一文不值。另外，它们还优于密码保护的钱包，因为这些密钥从未在线而且必须从一个保险箱或其他物理的安全存储中物理地取得。<<paper_wallet_encrypted>>展示一个在 bitaddress.org 网站上创建的带有加密私钥（BIP-38）的纸质钱包。
 
 [[paper_wallet_encrypted]]
 .An example of an encrypted paper wallet from bitaddress.org. The passphrase is "test."
@@ -806,10 +806,10 @@ image::images/mbc2_0409.png[]
 
 [WARNING]
 ====
-Although you can deposit funds into a paper wallet several times, you should withdraw all funds only once, spending everything. This is because in the process of unlocking and spending funds some wallets might generate a change address if you spend less than the whole amount. Additionally, if the computer you use to sign the transaction is compromised, you risk exposing the private key. By spending the entire balance of a paper wallet only once, you reduce the risk of key compromise. If you need only a small amount, send any remaining funds to a new paper wallet in the same transaction.
+虽然你可以将资金储蓄在一个纸质钱包中好几次，但是你应当仅去除所有的资金一次，并全花掉。这是因为如果你的花费少于总额，在解锁与花费资金的过程中一些钱包可能会生成一个找零地址。另外，如果你用来签署交易的电脑不安全，那么你就有泄露私钥的风险。通过一次花费纸质钱包上所有的钱，你就降低了密钥泄露的风险。如果你仅需要很少一笔金额，那么就在同一笔交易中将剩余的资金发送到一个新的纸质钱包中。
 ====
 
-Paper wallets come in many designs and sizes, with many different features. Some are intended to be given as gifts and have seasonal themes, such as Christmas and New Year's themes. Others are designed for storage in a bank vault or safe with the private key hidden in some way, either with opaque scratch-off stickers, or folded and sealed with tamper-proof adhesive foil. Figures pass:[<a data-type="xref" href="#paper_wallet_bpw" data-xrefstyle="select: labelnumber">#paper_wallet_bpw</a>] through pass:[<a data-type="xref" href="#paper_wallet_spw" data-xrefstyle="select: labelnumber">#paper_wallet_spw</a>] show various examples of paper wallets with security and backup features.
+纸质钱包有许多种设计和大小，带有许多不同的特性。有些是有意作为礼物赠与的，带有应节的主题，比如圣诞和新年主题。其他的被设计为保存在银行的金库或保险箱中，带有以某种形式隐藏的私钥 —— 要么是刮刮贴纸，要么折叠并封存在防篡改的金属片胶带中。图片pass:[<a data-type="xref" href="#paper_wallet_bpw" data-xrefstyle="select: labelnumber">#paper_wallet_bpw</a>] 到 pass:[<a data-type="xref" href="#paper_wallet_spw" data-xrefstyle="select: labelnumber">#paper_wallet_spw</a>]展示了集中带有安全和备份特性的纸质钱包。
 
 [[paper_wallet_bpw]]
 .An example of a paper wallet from bitcoinpaperwallet.com with the private key on a folding flap
@@ -819,7 +819,7 @@ image::images/mbc2_0410.png[]
 .The bitcoinpaperwallet.com paper wallet with the private key concealed
 image::images/mbc2_0411.png[]
 
-Other designs feature additional copies of the key and address, in the form of detachable stubs similar to ticket stubs, allowing you to store multiple copies to protect against fire, flood, or other natural disasters.((("", startref="KAadvanced04")))((("", startref="Wpaper04")))((("", startref="paperw04"))) 
+其他一些设计特性增加了密钥与地址的拷贝，就像票根那样可以撕下的存根，使你可以保存多份拷贝以防火灾、洪水、或其他的自然灾害。((("", startref="KAadvanced04")))((("", startref="Wpaper04")))((("", startref="paperw04"))) 
 
 [[paper_wallet_spw]]
 .An example of a paper wallet with additional copies of the keys on a backup "stub"
